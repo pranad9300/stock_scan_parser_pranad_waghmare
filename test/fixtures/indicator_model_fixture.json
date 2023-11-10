@@ -1,0 +1,8 @@
+{
+  "type": "indicator",
+  "study_type": "rsi",
+  "parameter_name": "length",
+  "min_value": 10,
+  "max_value": 50,
+  "default_value": 20
+}
