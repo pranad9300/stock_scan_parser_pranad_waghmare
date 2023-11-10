@@ -3,7 +3,7 @@ import 'criterion_model.dart' show CriterionModel;
 // Define the StockMarketSignalModel class with specified properties and types
 class StockMarketSignalModel {
   // Unique identifier for the model
-  String id;
+  int id;
 
   // Name associated with the model
   String name;
