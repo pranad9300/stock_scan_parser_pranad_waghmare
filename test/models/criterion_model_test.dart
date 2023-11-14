@@ -25,7 +25,7 @@ void main() {
           jsonData[criterionIndex][criterionElementIndex]['text']);
       expect(criterion.type,
           jsonData[criterionIndex][criterionElementIndex]['type']);
-      expect(criterion.variables, isA<List<Map<String, VariableModel>>>());
+      expect(criterion.variables, isA<Map<String, VariableModel>>());
     });
 
     test(

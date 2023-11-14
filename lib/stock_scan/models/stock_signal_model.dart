@@ -30,7 +30,7 @@ class StockMarketSignalModel {
   factory StockMarketSignalModel.fromMap(Map<String, dynamic> map) {
     return StockMarketSignalModel(
       // Set 'id' to the value in the map or an empty string if null
-      id: map['id'] ?? '',
+      id: map['id'] ?? 0,
 
       // Set 'name' to the value in the map or an empty string if null
       name: map['name'] ?? '',

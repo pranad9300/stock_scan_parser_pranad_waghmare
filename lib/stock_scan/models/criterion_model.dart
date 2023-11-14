@@ -4,11 +4,11 @@ import 'variables/indicator_variable_model.dart';
 import 'variables/value_variable_model.dart';
 
 /// Returns relevant variable models from variable map
-List<Map<String, VariableModel>>? getVariables(
+Map<String, VariableModel>? getVariables(
   Map<String, dynamic>? variablesMap,
 ) {
   // Initialize an empty list to store the variable models.
-  List<Map<String, VariableModel>> variables = [];
+  Map<String, VariableModel> variables = {};
 
   // Check if the provided variable map is not null.
   variablesMap?.forEach((key, map) {
@@ -16,11 +16,17 @@ List<Map<String, VariableModel>>? getVariables(
     switch (map['type']) {
       // If the type is 'value', create a ValueModel instance using the fromMap method.
       case 'value':
-        variables.add({key: ValueModel.fromMap(map)});
+        variables.putIfAbsent(
+          key,
+          () => ValueModel.fromMap(map),
+        );
         break;
       // If the type is 'indicator', create an IndicatorVariableModel instance using fromMap.
       case 'indicator':
-        variables.add({key: IndicatorVariableModel.fromMap(map)});
+        variables.putIfAbsent(
+          key,
+          () => IndicatorVariableModel.fromMap(map),
+        );
         break;
     }
   });
@@ -37,7 +43,7 @@ class CriterionModel {
   String type;
 
   // A list of maps with string keys and variable values
-  List<Map<String, VariableModel>>? variables;
+  Map<String, VariableModel>? variables;
 
   // Constructor for initializing CriterionModel instances
   CriterionModel({

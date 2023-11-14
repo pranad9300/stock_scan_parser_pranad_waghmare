@@ -41,7 +41,7 @@ void main() {
       final signalModel = StockMarketSignalModel.fromMap(invalidData);
 
       // Assert
-      expect(signalModel.id, '');
+      expect(signalModel.id, 0);
       expect(signalModel.name, '');
       expect(signalModel.tag, '');
       expect(signalModel.color, '');
