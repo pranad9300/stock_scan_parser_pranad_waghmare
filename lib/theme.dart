@@ -26,7 +26,7 @@ final ThemeData appTheme = ThemeData(
       ),
       borderRadius: BorderRadius.all(Radius.circular(2.0)),
     ),
-    contentPadding: EdgeInsets.zero,
+    contentPadding: EdgeInsets.only(left: 5),
   ),
   scaffoldBackgroundColor: const Color(0xFF01131B),
   cardColor: const Color(0xff1686b0),
